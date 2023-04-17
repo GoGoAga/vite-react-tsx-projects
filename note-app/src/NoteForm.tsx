@@ -1,0 +1,29 @@
+import { Col, Form, FormGroup, Row, Stack } from "react-bootstrap";
+import CreatableReactSelect from "react-select/creatable";
+
+export function NoteForm() {
+  return (
+    <Form>
+      <Stack gap={4}>
+        <Row>
+          <Col>
+            <FormGroup controlId="title">
+              <Form.Label>Title</Form.Label>
+              <Form.Control required />
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup controlId="tags">
+              <Form.Label>Tags</Form.Label>
+              <CreatableReactSelect isMulti />
+            </FormGroup>
+          </Col>
+        </Row>
+        <FormGroup controlId="markdown">
+          <Form.Label>Body</Form.Label>
+          <Form.Control required as="textarea" rows={15} />
+        </FormGroup>
+      </Stack>
+    </Form>
+  );
+}
